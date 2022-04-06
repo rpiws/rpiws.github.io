@@ -16,7 +16,7 @@
 <meta property="og:description" content="虽然我使用 Linux 系统仍然保留 Windows 的习惯：使用 GUI 界面，但是终端的基本命令还是不能丢（敲黑板那，别睡着） 下文就带你整理一些常用的终端命令（Raspbian，Debian，Ubuntu 通用） 不用全部背，想用的时候就查，慢慢的就会了（玄学警告） ————————–正文————————– 1. 提权命令由于很多时候进行的操作都是只有 root 用户才能做的，如下载软件，所">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2022-03-31T08:00:00.000Z">
-<meta property="article:modified_time" content="2022-04-06T08:02:02.612Z">
+<meta property="article:modified_time" content="2022-04-06T11:37:57.969Z">
 <meta property="article:author" content="Copcin">
 <meta property="article:tag" content="树莓派">
 <meta name="twitter:card" content="summary">
@@ -189,6 +189,12 @@
 
 <p>删除文件：</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">rm 文件名</span><br></pre></td></tr></table></figure>
+
+<p>移动文件（这里以 1.txt 为例）：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo <span class="built_in">mv</span> /home/pi/1.txt /opt/1.txt</span><br></pre></td></tr></table></figure>
+
+<p>重命名文件（其实都是 mv 命令）：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">mv</span> 1.txt 2.txt</span><br></pre></td></tr></table></figure>
 
 <h3 id="3-目录操作命令"><a href="#3-目录操作命令" class="headerlink" title="3. 目录操作命令"></a>3. 目录操作命令</h3><p>新建一个目录：</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mkdir 目录名</span><br></pre></td></tr></table></figure>
