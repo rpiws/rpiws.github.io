@@ -6,17 +6,17 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://example.com">
-  <title>树莓派入手006：轻量编辑器 Sublime Text | RPi Hub</title>
+  <title>树莓派折腾001：用树莓派搭建低功耗服务器并运行 Typecho | RPi Hub</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="只有一台树莓派的我偏偏又是一个程序员（不过还在学习中），由于我是和 Win 8 一个时间出生的，自然是忍受不了 Vim 和 nano 这种编辑器。于是我就开始了 IDE 的试用之路。试用了 Eclipse、VS Code、Thonny、Geany 等 IDE，最后最满意的是 Sublime Text～ ————————–正文—————————- 1. Sublime Text 简介Sublime">
+  <meta name="description" content="你现在看到的可能就是我建的博客之一。我作为一个折腾π，自然折腾了很多博客。像 CSDN，GitHub Pages 等等我都有建。但美中不足的是，CSDN 的博客可定制性差，GitHub Pages 又只是静态页面，反正各有各的缺点。目前我折腾过的感觉最满意的，就是在树莓派上建的 Typecho 博客了~ 用树莓派建的博客有三大好处：  1 是动态博客。可以在线编辑 Markdown （但我觉得用">
 <meta property="og:type" content="article">
-<meta property="og:title" content="树莓派入手006：轻量编辑器 Sublime Text">
-<meta property="og:url" content="http://example.com/2022/04/06/%E6%A0%91%E8%8E%93%E6%B4%BE%E5%85%A5%E6%89%8B006%EF%BC%9A%E8%BD%BB%E9%87%8F%E7%BC%96%E8%BE%91%E5%99%A8-Sublime-Text/index.html">
+<meta property="og:title" content="树莓派折腾001：用树莓派搭建低功耗服务器并运行 Typecho">
+<meta property="og:url" content="http://example.com/2022/04/11/%E6%A0%91%E8%8E%93%E6%B4%BE%E6%8A%98%E8%85%BE001%EF%BC%9A%E7%94%A8%E6%A0%91%E8%8E%93%E6%B4%BE%E6%90%AD%E5%BB%BA%E4%BD%8E%E5%8A%9F%E8%80%97%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%B9%B6%E8%BF%90%E8%A1%8C-Typecho/index.html">
 <meta property="og:site_name" content="RPi Hub">
-<meta property="og:description" content="只有一台树莓派的我偏偏又是一个程序员（不过还在学习中），由于我是和 Win 8 一个时间出生的，自然是忍受不了 Vim 和 nano 这种编辑器。于是我就开始了 IDE 的试用之路。试用了 Eclipse、VS Code、Thonny、Geany 等 IDE，最后最满意的是 Sublime Text～ ————————–正文—————————- 1. Sublime Text 简介Sublime">
+<meta property="og:description" content="你现在看到的可能就是我建的博客之一。我作为一个折腾π，自然折腾了很多博客。像 CSDN，GitHub Pages 等等我都有建。但美中不足的是，CSDN 的博客可定制性差，GitHub Pages 又只是静态页面，反正各有各的缺点。目前我折腾过的感觉最满意的，就是在树莓派上建的 Typecho 博客了~ 用树莓派建的博客有三大好处：  1 是动态博客。可以在线编辑 Markdown （但我觉得用">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2022-04-06T10:15:36.000Z">
-<meta property="article:modified_time" content="2022-04-06T12:12:29.372Z">
+<meta property="article:published_time" content="2022-04-11T03:17:14.000Z">
+<meta property="article:modified_time" content="2022-04-11T04:54:40.232Z">
 <meta property="article:author" content="Copcin">
 <meta property="article:tag" content="树莓派">
 <meta name="twitter:card" content="summary">
@@ -145,47 +145,68 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-树莓派入手006：轻量编辑器-Sublime-Text" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-树莓派折腾001：用树莓派搭建低功耗服务器并运行-Typecho" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      树莓派入手006：轻量编辑器 Sublime Text
+      树莓派折腾001：用树莓派搭建低功耗服务器并运行 Typecho
     </h1>
   
 
         
-        <a href="/2022/04/06/%E6%A0%91%E8%8E%93%E6%B4%BE%E5%85%A5%E6%89%8B006%EF%BC%9A%E8%BD%BB%E9%87%8F%E7%BC%96%E8%BE%91%E5%99%A8-Sublime-Text/" class="archive-article-date">
-  	<time datetime="2022-04-06T10:15:36.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-04-06</time>
+        <a href="/2022/04/11/%E6%A0%91%E8%8E%93%E6%B4%BE%E6%8A%98%E8%85%BE001%EF%BC%9A%E7%94%A8%E6%A0%91%E8%8E%93%E6%B4%BE%E6%90%AD%E5%BB%BA%E4%BD%8E%E5%8A%9F%E8%80%97%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%B9%B6%E8%BF%90%E8%A1%8C-Typecho/" class="archive-article-date">
+  	<time datetime="2022-04-11T03:17:14.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-04-11</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>只有一台树莓派的我偏偏又是一个程序员（不过还在学习中），由于我是和 Win 8 一个时间出生的，自然是忍受不了 Vim 和 nano 这种编辑器。于是我就开始了 IDE 的试用之路。试用了 Eclipse、VS Code、Thonny、Geany 等 IDE，最后最满意的是 Sublime Text～</p>
-<p>————————–正文—————————-</p>
-<h3 id="1-Sublime-Text-简介"><a href="#1-Sublime-Text-简介" class="headerlink" title="1. Sublime Text 简介"></a>1. Sublime Text 简介</h3><p>Sublime Text 是一款轻量级的 IDE，它几乎支持市面上所有语言！（当然写 Java 还是要用 IDEA 这些专业 IDE）它功能强大，界面简洁，最亮眼的是它对配置几乎没有要求，一台树莓派 Zero 2 W 都能跑得起来！</p>
-<p>在 Sublime Text 3 之前的版本，它是不支持树莓派的 ARM 架构的。也亏 Sublime Text 的作者良心，在 Sublime Text 4，作者终于把 Sublime Text 的阳光照进了树莓派～</p>
-<p>树莓派 IDE 选择 Sublime Text 的三大理由：</p>
+        <p>你现在看到的可能就是我建的博客之一。我作为一个折腾π，自然折腾了很多博客。像 CSDN，GitHub Pages 等等我都有建。但美中不足的是，CSDN 的博客可定制性差，GitHub Pages 又只是静态页面，反正各有各的缺点。目前我折腾过的感觉最满意的，就是在树莓派上建的 Typecho 博客了~</p>
+<p>用树莓派建的博客有三大好处：</p>
 <blockquote>
-<p><strong>1 对配置要求极低</strong></p>
-<p>就拿我家的 4B 来说吧，VS Code，Eclipse，IDEA 这些大 IDE 都跑得起来，但是一个比一个性能差。树莓派顶配跑这些 IDE 都卡成 PPT；</p>
-<p><strong>2 功能轻量实用</strong></p>
-<p>我个人觉得对于自己的小型开发，上述那些大 IDE 都太过臃肿了。很多功能都是自己用不上，又占内存的。相比之下，Sublime Text 这种轻量级的 IDE 可以说是“该有的都有，该没有的都没有”，功能轻量实用；</p>
-<p><strong>3 UI 简洁美观</strong></p>
-<p>我是一个简洁癖，任何东西只要做的有一点“赘肉”我都不能接受，就像 Visual Studio（IDEA 虽然没有 VS 那么严重，但是也是“重灾区”）Sublime Text 的 UI 不仅简洁，还美观，真的是开发者们的一大福音。</p>
+<p>1 是动态博客。可以在线编辑 Markdown （但我觉得用 Typora 线下编辑器比线上编辑体验更好，就是上传有点麻烦，希望 Typecho 作者能把 Typora 集成进 Typecho ~），而且可以在线评论；</p>
+<p>2 服务器低功耗。想想，一张信用卡大小的电脑，功耗自然低得离谱；</p>
+<p>3 一派多用。在一台搭载了 Typecho 的树莓派上，你也可以做其它事情，比如玩 Minecraft Pi Edition，让树莓派电量的 “ 性价比 ” 最高。 </p>
 </blockquote>
-<p>最后上价格：99$</p>
-<p>童鞋们不要惊慌，如果有钱可以支持一下正版，如果没钱也可以光明正大的白嫖，因为官方提供无限试用，只是不能升级，有时会给你弹个购买 Sublime Text 的窗，对使用毫无影响（要是 ST 是国产，按照这个水平，早就成 SSSSSSVIP 才能用的了）</p>
-<h3 id="2-Sublime-Text-安装"><a href="#2-Sublime-Text-安装" class="headerlink" title="2. Sublime Text 安装"></a>2. Sublime Text 安装</h3><p>去 <a target="_blank" rel="noopener" href="http://www.sublimetext.com/download">Sublime Text 下载页</a>，点击蓝色的 ARM64 开始下载。下载完把压缩文件移到 &#x2F;opt 目录，tar -xjvf 文件名，然后把解压下来的目录改名为 sublime_text，最后进入目录，把 .desktop 后缀的文件移到 &#x2F;usr&#x2F;share&#x2F;application 目录下（怎么有点 bash 期末考那味了）</p>
-<p>按下 Windows 徽标键，你应该就能看见在某个目录下藏着 Sublime Text 了～</p>
-<p>汉化及安装 view in browser 插件见这篇文章：<a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_42274266/article/details/113877105">点击进入</a></p>
-<h3 id="3-用-Sublime-Text-写代码"><a href="#3-用-Sublime-Text-写代码" class="headerlink" title="3. 用 Sublime Text 写代码"></a>3. 用 Sublime Text 写代码</h3><p>Sublime Text 自身集成了常用语言的语法高亮，如 Python，前端三件套，C&#x2F;C++ 等，算是功能很全面了。童鞋们可以把它设为自己的默认编辑器（在心里设）</p>
-<p>有一些扩展是装 Sublime Text 必备的。我在网上找了一篇文章，里面的扩展建议全装上，<a target="_blank" rel="noopener" href="https://www.cnblogs.com/aislingw/p/8715025.html">文章链接</a></p>
-<p>希望童鞋们在 fu 年用 Sublime Text 写代码能如 fu 添翼！</p>
+<p>废话不多说，开始搭建~</p>
+<p>—————————正文————————</p>
+<h3 id="1-服务器操作系统选择"><a href="#1-服务器操作系统选择" class="headerlink" title="1. 服务器操作系统选择"></a>1. 服务器操作系统选择</h3><p>个人觉得，在树莓派上运行 Windows Server vNext 2022 是最佳的选择，因为树莓派 4B 的性能跑 Server vNext 刚好够。Server vNext 也不会像 Windows 10 &#x2F; 11 on ARM 一样臃肿，属于 “ 该有的都有，不该有的都没有 ”，而且最吸引人的是，Server vNext 基于 Windows 11 ! 虽然 4B 也可以跑完整版的 11，但是性能差了太多了。我在一台老旧的 Panasonic CF-W7 设备（出厂 XP ）的我爸不要的机子上分别运行了完整版 11 和 Server vNext，结果 Server vNext 比 XP 还流畅，11 卡成 PPT~</p>
+<p>我上 UUP dump 上馊了 vNext arm64 版，结果还真搜到了，但是点进去，发现没有可用语言（T_T）但是源码包是有的，感兴趣的童鞋可以折腾折腾~</p>
+<p>（路人甲：前面讲了那么多 vNext 的好处，最后竟然不能用……）</p>
+<p>没办法，我们只能退而求其次，这里提供两种方案：第一种是装 Raspbian，稳定流畅；第二种是装 Ubuntu Desktop 22.04 LTS，单说 UI 做的就比 Raspbian 好了（不过我还是选择 Raspbian，因为我还要折腾 MC 呢！）</p>
+<p>至于怎么装，老派应该都不用说了吧……</p>
+<h3 id="2-安装-Typecho"><a href="#2-安装-Typecho" class="headerlink" title="2. 安装 Typecho"></a>2. 安装 Typecho</h3><p>先更新软件源：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get update &amp;&amp; sudo apt-get upgrade</span><br></pre></td></tr></table></figure>
+
+<p>然后安装依赖：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install apache2 php php-curl sqlite3 php-sqlite</span><br></pre></td></tr></table></figure>
+
+<p>启动 Apache 服务：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo /etc/init.d/apache2 restart </span><br></pre></td></tr></table></figure>
+
+<p>安装 Typecho：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> /var/www/html</span><br><span class="line">sudo wget http://typecho.org/downloads/1.1-17.10.30-release.tar.gz</span><br><span class="line">sudo tar zxvf 1.1-17.10.30-release.tar.gz</span><br><span class="line">sudo <span class="built_in">mv</span> build/* /var/www/html</span><br><span class="line">sudo <span class="built_in">chmod</span> 777 /var/www/html -R</span><br></pre></td></tr></table></figure>
+
+<p>随后打开 Chromium，地址栏输入 localhost，进行一些初始配置，就可以用了~</p>
+<p>博客的管理页面在 localhost&#x2F;admin，登录之后就可以在里面写博，查看数据等；</p>
+<h3 id="3-Typecho-500-的解决办法"><a href="#3-Typecho-500-的解决办法" class="headerlink" title="3. Typecho 500 的解决办法"></a>3. Typecho 500 的解决办法</h3><p>经常给派重装系统，重装了之后安装 Typecho，就发现，500 了！</p>
+<p>上面显示 Database Server Error，实际上不是数据库的问题，是权限的问题！</p>
+<p>打开终端，输入：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo <span class="built_in">chmod</span> 777 /var/www/html -R</span><br></pre></td></tr></table></figure>
+
+<p>给 Typecho 所有权限，应该就可以了（其实上面安装的时候已经给过了）</p>
+<p>如果实在不行，只有重装系统了（T_T）、</p>
+<h3 id="4-让-Typecho-变得更好"><a href="#4-让-Typecho-变得更好" class="headerlink" title="4. 让 Typecho 变得更好"></a>4. 让 Typecho 变得更好</h3><p><strong>首先我们要解决的第一个问题就是：怎么让别人看得见你的博客。</strong></p>
+<p>首先，你要去买一个域名，然后把域名绑定上去，具体自己百度；</p>
+<p>或者，也有不要钱的方法：使用花生壳或 ngrok 进行内网穿透~</p>
+<p><strong>第二个问题，就是如何让 Typecho 变得好看。</strong></p>
+<p>其实官方的主题并不丑，但是我们想要让 Typecho 更个性化，这样才能实现 Typecho 的价值，要不全去 CSDN 和博客园了，毕竟他俩的 SEO 天下谁能匹敌呢？</p>
+<p>可以去 typecho.me 选择主题，并下载，主题切换教程可以百度。</p>
+<p>最后，祝你们在 Typecho 上写出优质的博客~</p>
 
       
 
@@ -255,7 +276,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://example.com/2022/04/06/%E6%A0%91%E8%8E%93%E6%B4%BE%E5%85%A5%E6%89%8B006%EF%BC%9A%E8%BD%BB%E9%87%8F%E7%BC%96%E8%BE%91%E5%99%A8-Sublime-Text/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://example.com/2022/04/11/%E6%A0%91%E8%8E%93%E6%B4%BE%E6%8A%98%E8%85%BE001%EF%BC%9A%E7%94%A8%E6%A0%91%E8%8E%93%E6%B4%BE%E6%90%AD%E5%BB%BA%E4%BD%8E%E5%8A%9F%E8%80%97%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%B9%B6%E8%BF%90%E8%A1%8C-Typecho/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -269,18 +290,9 @@
   
 <nav id="article-nav">
   
-    <a href="/2022/04/11/%E6%A0%91%E8%8E%93%E6%B4%BE%E6%8A%98%E8%85%BE001%EF%BC%9A%E7%94%A8%E6%A0%91%E8%8E%93%E6%B4%BE%E6%90%AD%E5%BB%BA%E4%BD%8E%E5%8A%9F%E8%80%97%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%B9%B6%E8%BF%90%E8%A1%8C-Typecho/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          树莓派折腾001：用树莓派搭建低功耗服务器并运行 Typecho
-        
-      </div>
-    </a>
   
-  
-    <a href="/2022/04/02/%E6%A0%91%E8%8E%93%E6%B4%BE%E5%85%A5%E6%89%8B005%EF%BC%9A%E7%BB%88%E7%AB%AF%E7%BC%96%E8%BE%91%E5%99%A8-nano/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">树莓派入手005：终端编辑器 nano</div>
+    <a href="/2022/04/06/%E6%A0%91%E8%8E%93%E6%B4%BE%E5%85%A5%E6%89%8B006%EF%BC%9A%E8%BD%BB%E9%87%8F%E7%BC%96%E8%BE%91%E5%99%A8-Sublime-Text/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">树莓派入手006：轻量编辑器 Sublime Text</div>
       <i class="icon-circle-right"></i>
     </a>
   

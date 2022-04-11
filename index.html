@@ -143,6 +143,121 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-树莓派折腾001：用树莓派搭建低功耗服务器并运行-Typecho" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2022/04/11/%E6%A0%91%E8%8E%93%E6%B4%BE%E6%8A%98%E8%85%BE001%EF%BC%9A%E7%94%A8%E6%A0%91%E8%8E%93%E6%B4%BE%E6%90%AD%E5%BB%BA%E4%BD%8E%E5%8A%9F%E8%80%97%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%B9%B6%E8%BF%90%E8%A1%8C-Typecho/">树莓派折腾001：用树莓派搭建低功耗服务器并运行 Typecho</a>
+    </h1>
+  
+
+        
+        <a href="/2022/04/11/%E6%A0%91%E8%8E%93%E6%B4%BE%E6%8A%98%E8%85%BE001%EF%BC%9A%E7%94%A8%E6%A0%91%E8%8E%93%E6%B4%BE%E6%90%AD%E5%BB%BA%E4%BD%8E%E5%8A%9F%E8%80%97%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%B9%B6%E8%BF%90%E8%A1%8C-Typecho/" class="archive-article-date">
+  	<time datetime="2022-04-11T03:17:14.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-04-11</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>你现在看到的可能就是我建的博客之一。我作为一个折腾π，自然折腾了很多博客。像 CSDN，GitHub Pages 等等我都有建。但美中不足的是，CSDN 的博客可定制性差，GitHub Pages 又只是静态页面，反正各有各的缺点。目前我折腾过的感觉最满意的，就是在树莓派上建的 Typecho 博客了~</p>
+<p>用树莓派建的博客有三大好处：</p>
+<blockquote>
+<p>1 是动态博客。可以在线编辑 Markdown （但我觉得用 Typora 线下编辑器比线上编辑体验更好，就是上传有点麻烦，希望 Typecho 作者能把 Typora 集成进 Typecho ~），而且可以在线评论；</p>
+<p>2 服务器低功耗。想想，一张信用卡大小的电脑，功耗自然低得离谱；</p>
+<p>3 一派多用。在一台搭载了 Typecho 的树莓派上，你也可以做其它事情，比如玩 Minecraft Pi Edition，让树莓派电量的 “ 性价比 ” 最高。 </p>
+</blockquote>
+<p>废话不多说，开始搭建~</p>
+<p>—————————正文————————</p>
+<h3 id="1-服务器操作系统选择"><a href="#1-服务器操作系统选择" class="headerlink" title="1. 服务器操作系统选择"></a>1. 服务器操作系统选择</h3><p>个人觉得，在树莓派上运行 Windows Server vNext 2022 是最佳的选择，因为树莓派 4B 的性能跑 Server vNext 刚好够。Server vNext 也不会像 Windows 10 &#x2F; 11 on ARM 一样臃肿，属于 “ 该有的都有，不该有的都没有 ”，而且最吸引人的是，Server vNext 基于 Windows 11 ! 虽然 4B 也可以跑完整版的 11，但是性能差了太多了。我在一台老旧的 Panasonic CF-W7 设备（出厂 XP ）的我爸不要的机子上分别运行了完整版 11 和 Server vNext，结果 Server vNext 比 XP 还流畅，11 卡成 PPT~</p>
+<p>我上 UUP dump 上馊了 vNext arm64 版，结果还真搜到了，但是点进去，发现没有可用语言（T_T）但是源码包是有的，感兴趣的童鞋可以折腾折腾~</p>
+<p>（路人甲：前面讲了那么多 vNext 的好处，最后竟然不能用……）</p>
+<p>没办法，我们只能退而求其次，这里提供两种方案：第一种是装 Raspbian，稳定流畅；第二种是装 Ubuntu Desktop 22.04 LTS，单说 UI 做的就比 Raspbian 好了（不过我还是选择 Raspbian，因为我还要折腾 MC 呢！）</p>
+<p>至于怎么装，老派应该都不用说了吧……</p>
+<h3 id="2-安装-Typecho"><a href="#2-安装-Typecho" class="headerlink" title="2. 安装 Typecho"></a>2. 安装 Typecho</h3><p>先更新软件源：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get update &amp;&amp; sudo apt-get upgrade</span><br></pre></td></tr></table></figure>
+
+<p>然后安装依赖：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install apache2 php php-curl sqlite3 php-sqlite</span><br></pre></td></tr></table></figure>
+
+<p>启动 Apache 服务：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo /etc/init.d/apache2 restart </span><br></pre></td></tr></table></figure>
+
+<p>安装 Typecho：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> /var/www/html</span><br><span class="line">sudo wget http://typecho.org/downloads/1.1-17.10.30-release.tar.gz</span><br><span class="line">sudo tar zxvf 1.1-17.10.30-release.tar.gz</span><br><span class="line">sudo <span class="built_in">mv</span> build/* /var/www/html</span><br><span class="line">sudo <span class="built_in">chmod</span> 777 /var/www/html -R</span><br></pre></td></tr></table></figure>
+
+<p>随后打开 Chromium，地址栏输入 localhost，进行一些初始配置，就可以用了~</p>
+<p>博客的管理页面在 localhost&#x2F;admin，登录之后就可以在里面写博，查看数据等；</p>
+<h3 id="3-Typecho-500-的解决办法"><a href="#3-Typecho-500-的解决办法" class="headerlink" title="3. Typecho 500 的解决办法"></a>3. Typecho 500 的解决办法</h3><p>经常给派重装系统，重装了之后安装 Typecho，就发现，500 了！</p>
+<p>上面显示 Database Server Error，实际上不是数据库的问题，是权限的问题！</p>
+<p>打开终端，输入：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo <span class="built_in">chmod</span> 777 /var/www/html -R</span><br></pre></td></tr></table></figure>
+
+<p>给 Typecho 所有权限，应该就可以了（其实上面安装的时候已经给过了）</p>
+<p>如果实在不行，只有重装系统了（T_T）、</p>
+<h3 id="4-让-Typecho-变得更好"><a href="#4-让-Typecho-变得更好" class="headerlink" title="4. 让 Typecho 变得更好"></a>4. 让 Typecho 变得更好</h3><p><strong>首先我们要解决的第一个问题就是：怎么让别人看得见你的博客。</strong></p>
+<p>首先，你要去买一个域名，然后把域名绑定上去，具体自己百度；</p>
+<p>或者，也有不要钱的方法：使用花生壳或 ngrok 进行内网穿透~</p>
+<p><strong>第二个问题，就是如何让 Typecho 变得好看。</strong></p>
+<p>其实官方的主题并不丑，但是我们想要让 Typecho 更个性化，这样才能实现 Typecho 的价值，要不全去 CSDN 和博客园了，毕竟他俩的 SEO 天下谁能匹敌呢？</p>
+<p>可以去 typecho.me 选择主题，并下载，主题切换教程可以百度。</p>
+<p>最后，祝你们在 Typecho 上写出优质的博客~</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">树莓派</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2022/04/11/%E6%A0%91%E8%8E%93%E6%B4%BE%E6%8A%98%E8%85%BE001%EF%BC%9A%E7%94%A8%E6%A0%91%E8%8E%93%E6%B4%BE%E6%90%AD%E5%BB%BA%E4%BD%8E%E5%8A%9F%E8%80%97%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%B9%B6%E8%BF%90%E8%A1%8C-Typecho/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-树莓派入手006：轻量编辑器-Sublime-Text" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
